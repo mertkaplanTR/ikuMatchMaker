@@ -69,19 +69,19 @@
 					<div class="signup-header wow fadeInUp">
 						<h3 class="form-title text-center">KAYIT OL</h3>
 						<form class="form-header" action="http://sendmesomewhere.com/" role="form" method="POST" id="#">
-						<input type="hidden" name="u" value="503bdae81fde8612ff4944435">
-						<input type="hidden" name="id" value="bfdba52708">
+						<input type="hidden" name="u" value="deneme">
+						<input type="hidden" name="id" value="deneme2">
 							<div class="form-group">
-								<input class="form-control input-lg" name="MERGE1" id="name" type="text" placeholder="Isminiz" required>
+                                <asp:TextBox ID="firstname" runat="server" CssClass="form-control input-lg" required placeHolder="Isminiz" type="text"></asp:TextBox>   
 							</div>
 							<div class="form-group">
-								<input class="form-control input-lg" name="MERGE0" id="surname" type="text" placeholder="Soyisminiz" required>
+                                <asp:TextBox ID="surname" runat="server" CssClass="form-control input-lg" required placeholder="Soyadiniz" type="text"></asp:TextBox>
 							</div>
                             <div class="form-group">
-                                <input class="form-control input-lg" name="MERGE2" id="email" type="email" placeholder="Gecerli Mail Adresiniz" required>
+                                 <asp:TextBox ID="email" runat="server" CssClass="form-control input-lg" required placeholder="E-mail Adresiniz" type="email"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <input class="form-control input-lg" name="MERGE3" id="password" type="password" placeholder="Sifreniz" required>
+                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control input-lg" required placeholder="Sifre" type="password"></asp:TextBox>
                             </div>
 
 							<div class="form-group last">
