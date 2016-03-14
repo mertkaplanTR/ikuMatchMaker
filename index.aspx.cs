@@ -11,4 +11,8 @@ public partial class index : System.Web.UI.Page
     {
 
     }
+    protected void kaydolButon_Click(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -72,20 +72,21 @@
 						<input type="hidden" name="u" value="deneme">
 						<input type="hidden" name="id" value="deneme2">
 							<div class="form-group">
-                                <asp:TextBox ID="firstname" runat="server" CssClass="form-control input-lg" required placeHolder="Isminiz" type="text"></asp:TextBox>   
+                                <asp:TextBox ID="firstName" runat="server" CssClass="form-control input-lg" required placeHolder="Isminiz" type="text"></asp:TextBox>   
 							</div>
 							<div class="form-group">
-                                <asp:TextBox ID="surname" runat="server" CssClass="form-control input-lg" required placeholder="Soyadiniz" type="text"></asp:TextBox>
+                                <asp:TextBox ID="surName" runat="server" CssClass="form-control input-lg" required placeholder="Soyadiniz" type="text"></asp:TextBox>
 							</div>
                             <div class="form-group">
                                  <asp:TextBox ID="email" runat="server" CssClass="form-control input-lg" required placeholder="E-mail Adresiniz" type="email"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control input-lg" required placeholder="Sifre" type="password"></asp:TextBox>
+                                <asp:TextBox ID="sifre" runat="server" CssClass="form-control input-lg" required placeholder="Sifre" type="password"></asp:TextBox>
                             </div>
 
 							<div class="form-group last">
-								<input type="submit" class="btn btn-warning btn-block btn-lg" value="KAYDOL">
+                                <asp:Button ID="kaydolButon" runat="server" class="btn btn-warning btn-block btn-lg" text="KAYDOL" OnClick="kaydolButon_Click" />
+								
 							</div>
 							<p class="privacy text-center">Kullanim sartlari ve gerekli kayit olurken kullanmaniz gereken mail hakkinda <a href="privacy.html">kullanim sartlari</a> sayfasini lutfen ziyaret ediniz.</p>
 						</form>

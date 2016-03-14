@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-        <title>AFTER LOGIN PAGE</title>
+     <title>AFTER LOGIN PAGE</title>
     <link href="css/owl.theme.css" rel="stylesheet" />
     <link href="css/owl.carousel.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
@@ -23,7 +23,6 @@
     <link href="css/css-app-orange.css" rel="stylesheet" />
     <link href="css/css-app-green.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" /> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -78,28 +77,81 @@
 		<div class="text-center">
 		
 			<h2 class="wow fadeInCenter">Profil Bilgilerim</h2>
-			<div class="title-line wow fadeInCenter">xxxxx</div>
+			<div class="title-line wow fadeInCenter">
+
+			</div>
 		</div>
 
 		<div class="row package-option">
-			<div class="col-sm-3">
-           <%-------------------------------------------------div 3 baslangıc--------------------------------------------%>
+			<div class="col-sm-2">
+          
      <form class="form-horizontal" role="form">
-    <div class="form-group">
-      <h5>Detaylı Arama</h5>
+         <h3>Detaylı Arama</h3><br />
+         Cinsiyet:
+         <br />
+         <asp:DropDownList ID="sex" runat="server">
+             <asp:ListItem>Kadın</asp:ListItem>
+             <asp:ListItem>Erkek</asp:ListItem>
+         </asp:DropDownList>
+         <br /><br />
+         Kampus:<br />
+         <asp:DropDownList ID="campus" runat="server">
+             <asp:ListItem>Atakoy</asp:ListItem>
+             <asp:ListItem>Hukuk</asp:ListItem>
+             <asp:ListItem>Hazırlık</asp:ListItem>
+             <asp:ListItem>MYO</asp:ListItem>
+         </asp:DropDownList><br /><br />
+         Bolum:<br />
+         <asp:DropDownList ID="bolum" runat="server">
+              <asp:ListItem>Muhendislik</asp:ListItem>
+             <asp:ListItem>Mimarlik</asp:ListItem>
+             <asp:ListItem>Iktisat - Isletme</asp:ListItem>
+         </asp:DropDownList><br /><br />
 
-    </div>
-  </form>
-                <%---------------------------------------div3 kısmı bitis----------------------------------------------------%>
+         Sac Tipi:<br />
+         <asp:DropDownList ID="sacTipi" runat="server">
+              <asp:ListItem>Duz</asp:ListItem>
+             <asp:ListItem>Dalgalı</asp:ListItem>
+             <asp:ListItem>Kıvırcık</asp:ListItem>
+         </asp:DropDownList><br /><br />
+
+         Sac Rengi:<br />
+         <asp:DropDownList ID="sacRengi" runat="server">
+              <asp:ListItem>Sarı</asp:ListItem>
+             <asp:ListItem>Siyah</asp:ListItem>
+             <asp:ListItem>Kahve Rengi</asp:ListItem>
+         </asp:DropDownList><br /><br />
+
+             Goz Rengi:<br />
+         <asp:DropDownList ID="gozRengi" runat="server">
+              <asp:ListItem>Kahve</asp:ListItem>
+             <asp:ListItem>Mavi</asp:ListItem>
+             <asp:ListItem>Yesil</asp:ListItem>
+             <asp:ListItem>Siyah</asp:ListItem>
+         </asp:DropDownList><br /><br />
+
+         Boyu:<br />
+         <asp:DropDownList ID="Boy" runat="server">
+              <asp:ListItem>140 cm - 160 cm</asp:ListItem>
+             <asp:ListItem>160 cm - 180 cm</asp:ListItem>
+             <asp:ListItem>180 cm - 200 cm</asp:ListItem>
+         </asp:DropDownList><br /><br />
+
+  </form> 
 			  </div>
 
 			<!-- /.package 4 -->
-			<div class="col-sm-9">
+			<div class="col-sm-10">
 			 <div class="price-box wow fadeInUp">
-			   <div class="price-heading text-left">
+			   <%--<div class="price-heading text-left">
 					<h3>Adem Bavas</h3>
-			   </div>
+                       </div>--%>
+                 <div class="price-heading text-center"
+                     <asp:Label ID="liked" runat="server" Text="Liked:"><asp:Label ID="likedNumber" runat="server"></asp:Label></asp:Label> &emsp;
+                     <asp:Label ID="liker" runat="server" Text="Liker:"><asp:Label ID="likerNumber" runat="server" Text="4567"></asp:Label></asp:Label>
+                     </div>
 					<img alt="client" src="images/adembavas.jpg" class="wow fadeInUp">
+                       
 			   <div class="price-footer text-center">
 				 <a class="btn btn-price" href="#">Profile Git</a>
 				</div>	
@@ -126,7 +178,7 @@
 						<li><a class="wow fadeInUp" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>
 					</ul>
 				</div>	
-			<div class="text-center wow fadeInUp" style="font-size: 14px;">Copyright Backyard 2015 - Template by <a href="http://www.moxdesign.com">MoxDesign</a></div>
+			<div class="text-center wow fadeInUp" style="font-size: 14px;">Copyright <a href="http://www.mertkaplanblog.wordpress.com">Mert Kaplan</a></div>
 			<a href="#" class="scrollToTop"><i class="pe-7s-up-arrow pe-va"></i></a>
 		</div>	
 	</div>	

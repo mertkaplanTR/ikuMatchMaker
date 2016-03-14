@@ -63,6 +63,7 @@
                         <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
                         <input type="hidden" name="id" value="bfdba52708">
                         <div class="form-group">
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                             <input class="form-control input-lg" name="MERGE2" id="email" type="email" placeholder="Gecerli Mail Adresiniz" required>
                         </div>
                         <div class="form-group">
