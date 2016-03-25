@@ -75,16 +75,15 @@
 <div id="package">
 	<div class="container">
 		<div class="text-center">
-		
 			<h2 class="wow fadeInCenter">Profil Bilgilerim</h2>
-			<div class="title-line wow fadeInCenter">
-
+			<div class="title-line wow fadeInCenter">Hosgeldiniz Sn. <asp:Literal ID="name" runat="server"></asp:Literal>
 			</div>
 		</div>
 
+ 
 		<div class="row package-option">
+            <!---------------------------------- 222222'LiK KOLONUN BASLANGICI----------------->
 			<div class="col-sm-2">
-          
      <form class="form-horizontal" role="form">
          <h3>Detaylı Arama</h3><br />
          Cinsiyet:
@@ -135,33 +134,86 @@
               <asp:ListItem>140 cm - 160 cm</asp:ListItem>
              <asp:ListItem>160 cm - 180 cm</asp:ListItem>
              <asp:ListItem>180 cm - 200 cm</asp:ListItem>
-         </asp:DropDownList><br /><br />
+         </asp:DropDownList><br />
+         <asp:Button ID="Button1" runat="server" Text="Ara" CssClass="btn btn-price"/>
+        </form> 
+			</div>
+            <!---------------------------------- 222222'LUK KOLONUN BITISI----------------->
 
-  </form> 
-			  </div>
 
-			<!-- /.package 4 -->
+			<!---------------------------------- 1000000'LUK KOLONUN BASLANGICI----------------->
 			<div class="col-sm-10">
 			 <div class="price-box wow fadeInUp">
-			   <%--<div class="price-heading text-left">
-					<h3>Adem Bavas</h3>
-                       </div>--%>
-                 <div class="price-heading text-center"
-                     <asp:Label ID="liked" runat="server" Text="Liked:"><asp:Label ID="likedNumber" runat="server"></asp:Label></asp:Label> &emsp;
-                     <asp:Label ID="liker" runat="server" Text="Liker:"><asp:Label ID="likerNumber" runat="server" Text="4567"></asp:Label></asp:Label>
-                     </div>
-					<img alt="client" src="images/adembavas.jpg" class="wow fadeInUp">
-                       
-			   <div class="price-footer text-center">
-				 <a class="btn btn-price" href="#">Profile Git</a>
-				</div>	
-			  </div>
 
+                 <div class="price-heading text-center">
+                    <h3>Begenilenler: <asp:HyperLink ID="likedNumber" runat="server" NavigateUrl="~/begenilenKisiler.aspx"></asp:HyperLink>&emsp;&emsp;  
+                    Begenenler: <asp:HyperLink ID="likerNumber" runat="server"  NavigateUrl="~/begenenKisiler.aspx"></asp:HyperLink></h3>
+                     </div>
+                 <div class="testi-item">
+						<div class="client-pic text-left">
+						
+							<!-- /.client photo -->
+							<center>
+                                <img src="images/adembavas.jpg" alt="client"><br /><br />
+                           <asp:Label ID="Label1" runat="server" Text="Adiniz: "></asp:Label><asp:Label ID="isim" runat="server"></asp:Label>
+                            <asp:Label ID="soyadi" runat="server"></asp:Label>&emsp;&emsp;
+			               <asp:Label ID="Label2" runat="server" Text="Mail Adresiniz: "></asp:Label><asp:Label ID="email" runat="server"></asp:Label>
+						</center>
+                              </div>     
 		</div>
 	</div>
+		</div>
+            <!---------------------------------- 1000000'LUK KOLONUN BITISI----------------->
+                
+	</div>
+</div>
 </div>
 
 
+
+        <div id="screenshot">
+	<div class="container">
+		<div class="text-center">
+			<h2 class="wow fadeInLeft">Fotograflarim</h2>
+		</div>
+		<div class="row screenshots">
+			<div id="screenshots" class="owl-carousel">
+				<!-- /.screenshot images -->
+				<div class="screen wow fadeInUp">
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.1s">
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.2s">
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.3s">
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.4s">
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.5s">
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+				</div>			
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.6s">
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+				</div>
+
+				<div class="screen wow fadeInUp" data-wow-delay="0.7s">
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
   

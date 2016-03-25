@@ -12,9 +12,17 @@ public partial class afterLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["isim"] == null || Session["isim"] == "")
+            Response.Redirect("giris.aspx");
+        else
+        name.Text = Session["isim"].ToString();
+       
+        //alttakiler henuz session ile alınmıyor onları session id ile alip dinamik yapmamız gerekli
+        //adem database'i ayarladıktan sonra id'ye gore alıp dinamik yap!
+        
         getLikedNumber();
         getLikerNumber();
-        
+        getInfo();
     }
 
     void getLikedNumber()
@@ -36,4 +44,17 @@ public partial class afterLogin : System.Web.UI.Page
         con.Close();
     }
 
+
+    void getInfo()
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
+        con.Open();
+        SqlCommand getName = new SqlCommand("SELECT [name] FROM [MatchMaker].[user].[Info] where userID='3'", con);
+        isim.Text = getName.ExecuteScalar().ToString();
+        SqlCommand getSurname = new SqlCommand("SELECT [surname] FROM [MatchMaker].[user].[Info] where userID='3'", con);
+        soyadi.Text = getSurname.ExecuteScalar().ToString();
+        SqlCommand getEmail = new SqlCommand("SELECT [mailAddress] FROM [MatchMaker].[user].[Info] where userID='3'", con);
+        email.Text = getEmail.ExecuteScalar().ToString();
+        con.Close();
+    }
 }

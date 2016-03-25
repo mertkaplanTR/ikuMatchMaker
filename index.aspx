@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -23,6 +23,7 @@
     <link href="css/css-app-orange.css" rel="stylesheet" />
     <link href="css/css-app-green.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />  
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,7 +42,7 @@
 				<div class="col-md-7">
 				
 					<!-- /.logo -->
-					<div class="logo wow fadeInDown"> <a href=""><img src="images/logo3.png" alt="logo"></a></div>
+					<div class="logo wow fadeInDown"> <a href="index.aspx"><img src="images/logo3.png" alt="logo"></a></div>
 
 					<!-- /.main title -->
 						<h1 class="wow fadeInLeft">
@@ -78,15 +79,15 @@
                                 <asp:TextBox ID="surName" runat="server" CssClass="form-control input-lg" required placeholder="Soyadiniz" type="text"></asp:TextBox>
 							</div>
                             <div class="form-group">
-                                 <asp:TextBox ID="email" runat="server" CssClass="form-control input-lg" required placeholder="E-mail Adresiniz" type="email"></asp:TextBox>
+                                 <asp:TextBox ID="mailAdresi" runat="server" CssClass="form-control input-lg" required placeholder="E-mail Adresiniz" type="email"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <asp:TextBox ID="sifre" runat="server" CssClass="form-control input-lg" required placeholder="Sifre" type="password"></asp:TextBox>
+                                <asp:TextBox ID="sifresi" runat="server" CssClass="form-control input-lg" required placeholder="Sifre" type="password"></asp:TextBox>
                             </div>
 
 							<div class="form-group last">
                                 <asp:Button ID="kaydolButon" runat="server" class="btn btn-warning btn-block btn-lg" text="KAYDOL" OnClick="kaydolButon_Click" />
-								
+                                <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
 							</div>
 							<p class="privacy text-center">Kullanim sartlari ve gerekli kayit olurken kullanmaniz gereken mail hakkinda <a href="privacy.html">kullanim sartlari</a> sayfasini lutfen ziyaret ediniz.</p>
 						</form>

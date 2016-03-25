@@ -8,13 +8,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class giris : System.Web.UI.Page
+public partial class _Default : System.Web.UI.Page
 {
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
     protected void Page_Load(object sender, EventArgs e)
     {
         con.Open();
-
     }
     protected void girisButonu_Click(object sender, EventArgs e)
     {
@@ -39,12 +38,10 @@ public partial class giris : System.Web.UI.Page
                 Response.Redirect("afterLogin.aspx");
             }
         }
-        catch(Exception)
+        catch (Exception)
         {
             ErrorLabel.Text = "islem hatali";
         }
-
-
 
     }
 }

@@ -30,11 +30,11 @@
 
     <!-- /.preloader -->
     <div id="preloader"></div>
-    <div id="top"></div>
+    <div id="top"></asp:Label></div>
 
     <!-- /.parallax full screen background image -->
     <div class="fullscreen landing parallax" style="background-image:url('images/bg2.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
-
+   
         <div class="overlay">
             <div class="container">
                 <div class="col-md-10 col-md-offset-1 text-center">
@@ -58,35 +58,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
-                    <center><h3>Giris Yap</h3></center>
-                    <form class="form-header" action="http://iku.edu.tr/" role="form" method="POST" id="#">
-                        <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
-                        <input type="hidden" name="id" value="bfdba52708">
+                    <center><h3>Giris Yap</h3></center>                
                         <div class="form-group">
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                            <input class="form-control input-lg" name="MERGE2" id="email" type="email" placeholder="Gecerli Mail Adresiniz" required>
+                            <asp:TextBox ID="mailAddress" runat="server" CssClass="form-control input-lg" type="email" placeholder="Sisteme Kayitli Mail Adresiniz" required></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <input class="form-control input-lg" name="MERGE3" id="password" type="password" placeholder="Sifreniz" required>
+                            <asp:TextBox ID="password" runat="server" CssClass="form-control input-lg" type="password" placeholder="Sifreniz" required></asp:TextBox>
                         </div>
                         <div class="form-group last">
-                            <input type="submit" class="btn btn-primary btn-block btn-lg" value="GIRIS">
-                        </div>
-                    </form>
+                            <asp:Button ID="girisButonu" runat="server" Text="Giris Yap" cssClass="btn btn-primary btn-block btn-lg"  OnClick="girisButonu_Click" />
+                      <asp:Label ID="ErrorLabel" runat="server" Text=""></asp:Label>
+                            
+                             </div>  
                 </div>
 
                 <div class="col-sm-5">
+                    
                     <center><h3>Sifremi Unuttum</h3></center>
-                    <form class="form-header" action="http://iku.edu.tr/" role="form" method="POST" id="#">
-                        <input type="hidden" name="u" value="503bdae81fde8612ff4944435">
-                        <input type="hidden" name="id" value="bfdba52708">
+                  
                         <div class="form-group">
-                            <input class="form-control input-lg" name="MERGE2" id="email" type="email" placeholder="Gecerli Mail Adresiniz" required>
+                            <input class="form-control input-lg" name="MERGE2" id="email" type="email" placeholder="Gecerli Mail Adresiniz">
                         </div>
                         <div class="form-group last">
                             <input type="submit" class="btn btn-warning btn-block btn-lg" value="GONDER">
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
