@@ -12,17 +12,23 @@ public partial class afterLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["isim"] == null || Session["isim"] == "")
+
+        if (Session["isim"] == null || Session ["isim"] == "")
             Response.Redirect("giris.aspx");
         else
-        name.Text = Session["isim"].ToString();
-       
+        { 
+            sonuc.Text = Session["isim"].ToString();
+            isim.Text = Session["isim"].ToString();
+        }
+        
+
         //alttakiler henuz session ile alınmıyor onları session id ile alip dinamik yapmamız gerekli
         //adem database'i ayarladıktan sonra id'ye gore alıp dinamik yap!
-        
+
         getLikedNumber();
         getLikerNumber();
         getInfo();
+       
     }
 
     void getLikedNumber()
@@ -30,7 +36,8 @@ public partial class afterLogin : System.Web.UI.Page
         //person id'si 3 olan kişi kaç kişiyi like etmiş?
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
         con.Open();
-        SqlCommand getLikedNumber = new SqlCommand("select count(*) from [system].[Likes] where person1='3'", con);
+       
+        SqlCommand getLikedNumber = new SqlCommand("select count(*) from [system].[Likes] where person1=1", con);
         likedNumber.Text = getLikedNumber.ExecuteScalar().ToString();
         con.Close();
     }
@@ -39,7 +46,7 @@ public partial class afterLogin : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
         con.Open();
-        SqlCommand getLikerNumber = new SqlCommand("select count(*) from [system].[Likes] where person2='3'", con);
+        SqlCommand getLikerNumber = new SqlCommand("select count(*) from [system].[Likes] where person2='1'", con);
         likerNumber.Text = getLikerNumber.ExecuteScalar().ToString();
         con.Close();
     }
@@ -47,14 +54,25 @@ public partial class afterLogin : System.Web.UI.Page
 
     void getInfo()
     {
+       
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
         con.Open();
-        SqlCommand getName = new SqlCommand("SELECT [name] FROM [MatchMaker].[user].[Info] where userID='3'", con);
+        //SECURILEY SOLVED THIS BITCH 
+        string sql = "SELECT [name] FROM [MatchMaker].[user].[Info] where userID=@userID";
+        SqlCommand getName = new SqlCommand(sql,con);
+        getName.Parameters.AddWithValue("userID", isim.Text);
         isim.Text = getName.ExecuteScalar().ToString();
-        SqlCommand getSurname = new SqlCommand("SELECT [surname] FROM [MatchMaker].[user].[Info] where userID='3'", con);
+
+    
+        SqlCommand getSurname = new SqlCommand("SELECT [surname] FROM [MatchMaker].[user].[Info] where userID='1'", con);
         soyadi.Text = getSurname.ExecuteScalar().ToString();
-        SqlCommand getEmail = new SqlCommand("SELECT [mailAddress] FROM [MatchMaker].[user].[Info] where userID='3'", con);
+        SqlCommand getEmail = new SqlCommand("SELECT [mailAddress] FROM [MatchMaker].[user].[Info] where userID='1'", con);
         email.Text = getEmail.ExecuteScalar().ToString();
+        
         con.Close();
     }
+
+    public object sonucu { get; set; }
+
+    public string donen { get; set; }
 }

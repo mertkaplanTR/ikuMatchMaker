@@ -10,38 +10,17 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+    
     protected void Page_Load(object sender, EventArgs e)
     {
-        con.Open();
+        
     }
-    protected void girisButonu_Click(object sender, EventArgs e)
+
+    protected void girisButonu_Click1(object sender, EventArgs e)
     {
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = con;
-        cmd.CommandType = CommandType.StoredProcedure;
-        cmd.CommandText = "[dbo].[SP_LOGIN]";
-        cmd.Parameters.Add("@mailAddress", mailAddress.Text);
-        cmd.Parameters.Add("@password", password.Text);
-        cmd.Parameters.Add("@sonuc", SqlDbType.NChar, 10);
-        cmd.Parameters["@sonuc"].Direction = ParameterDirection.Output;
-
-        try
-        {
-            cmd.ExecuteNonQuery();
-            string dsonuc = cmd.Parameters["@sonuc"].Value.ToString();
-            if (dsonuc == null || dsonuc == "")
-                ErrorLabel.Text = "Hatali mail veya sifre";
-            else
-            {
-                Session["isim"] = dsonuc;
-                Response.Redirect("afterLogin.aspx");
-            }
-        }
-        catch (Exception)
-        {
-            ErrorLabel.Text = "islem hatali";
-        }
-
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+        con.Open();
+        SqlCommand getName = new SqlCommand("SELECT * FROM [dbo].[user2] ", con);
+        Label1.Text = getName.ExecuteScalar().ToString();
     }
 }

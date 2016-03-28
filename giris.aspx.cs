@@ -21,7 +21,7 @@ public partial class giris : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = con;
         cmd.CommandType = CommandType.StoredProcedure;
-        cmd.CommandText = "[dbo].[SP_LOGIN]";
+        cmd.CommandText = "[dbo].[SP2_LOGIN]";
         cmd.Parameters.Add("@mailAddress", mailAddress.Text);
         cmd.Parameters.Add("@password", password.Text);
         cmd.Parameters.Add("@sonuc", SqlDbType.NChar, 10);
@@ -39,7 +39,7 @@ public partial class giris : System.Web.UI.Page
                 Response.Redirect("afterLogin.aspx");
             }
         }
-        catch(Exception)
+        catch (Exception)
         {
             ErrorLabel.Text = "islem hatali";
         }

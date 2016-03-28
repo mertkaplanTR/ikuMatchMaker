@@ -9,10 +9,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:TextBox ID="mailAddress" runat="server"></asp:TextBox>
-        <asp:TextBox ID="password" runat="server"></asp:TextBox>
-        <asp:Button ID="girisButonu" runat="server" Text="Button" OnClick="girisButonu_Click" />
-        <asp:Label ID="ErrorLabel" runat="server"></asp:Label>
+        <asp:Button ID="girisButonu" runat="server" Text="Button" OnClick="girisButonu_Click1" />
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     </div>
     </form>
 </body>

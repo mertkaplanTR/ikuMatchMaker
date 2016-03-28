@@ -29,7 +29,7 @@ public partial class index : System.Web.UI.Page
         string surname=surName.Text;
         string email=mailAdresi.Text;
         string password = sifresi.Text;
-        SqlCommand cmd = new SqlCommand("Insert Into [dbo].[user2] (name,surname,[mailAddress],[password]) Values (@name,@surname,@mailAddress,@password)",con);
+        SqlCommand cmd = new SqlCommand("Insert Into [user].[Info] (name,surname,[mailAddress],[password]) Values (@name,@surname,@mailAddress,@password)",con);
         cmd.Parameters.Add(new SqlParameter("@name", name));
         cmd.Parameters.Add(new SqlParameter("@surname", surname));
         cmd.Parameters.Add(new SqlParameter("@mailAddress", email));

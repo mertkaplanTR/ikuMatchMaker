@@ -76,7 +76,7 @@
 	<div class="container">
 		<div class="text-center">
 			<h2 class="wow fadeInCenter">Profil Bilgilerim</h2>
-			<div class="title-line wow fadeInCenter">Hosgeldiniz Sn. <asp:Literal ID="name" runat="server"></asp:Literal>
+			<div class="title-line wow fadeInCenter">Hosgeldin from ID'si:<asp:Literal ID="sonuc" runat="server"></asp:Literal>
 			</div>
 		</div>
 
@@ -155,10 +155,12 @@
 							<!-- /.client photo -->
 							<center>
                                 <img src="images/adembavas.jpg" alt="client"><br /><br />
-                           <asp:Label ID="Label1" runat="server" Text="Adiniz: "></asp:Label><asp:Label ID="isim" runat="server"></asp:Label>
+                           <asp:Label ID="Label1" runat="server" Text="Adiniz: "></asp:Label>
+                               <asp:Literal ID="isim" runat="server"></asp:Literal>
                             <asp:Label ID="soyadi" runat="server"></asp:Label>&emsp;&emsp;
 			               <asp:Label ID="Label2" runat="server" Text="Mail Adresiniz: "></asp:Label><asp:Label ID="email" runat="server"></asp:Label>
-						</center>
+						
+                            </center>
                               </div>     
 		</div>
 	</div>
