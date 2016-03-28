@@ -76,7 +76,7 @@
 	<div class="container">
 		<div class="text-center">
 			<h2 class="wow fadeInCenter">Profil Bilgilerim</h2>
-			<div class="title-line wow fadeInCenter">Hosgeldin from ID'si:<asp:Literal ID="sonuc" runat="server"></asp:Literal>
+			<div class="title-line wow fadeInCenter">Hosgeldin session ID'si:<asp:Literal ID="sonuc" runat="server"></asp:Literal>
 			</div>
 		</div>
 
@@ -158,67 +158,48 @@
                            <asp:Label ID="Label1" runat="server" Text="Adiniz: "></asp:Label>
                                <asp:Literal ID="isim" runat="server"></asp:Literal>
                             <asp:Label ID="soyadi" runat="server"></asp:Label>&emsp;&emsp;
-			               <asp:Label ID="Label2" runat="server" Text="Mail Adresiniz: "></asp:Label><asp:Label ID="email" runat="server"></asp:Label>
-						
-                            </center>
-                              </div>     
+			               <asp:Label ID="Label2" runat="server" Text="Mail Adresiniz: "></asp:Label><asp:Label ID="email" runat="server"></asp:Label>            
+                              </center>
+                         </div>     
 		</div>
-	</div>
-		</div>
-            <!---------------------------------- 1000000'LUK KOLONUN BITISI----------------->
-                
-	</div>
-</div>
-</div>
-
-
-
-        <div id="screenshot">
-	<div class="container">
-		<div class="text-center">
-			<h2 class="wow fadeInLeft">Fotograflarim</h2>
-		</div>
-		<div class="row screenshots">
+	    <div class="row screenshots"> <center><h3>Fotograflarım:</h3></center>
+                <br />
 			<div id="screenshots" class="owl-carousel">
 				<!-- /.screenshot images -->
 				<div class="screen wow fadeInUp">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
 				</div>
 				
 				<div class="screen wow fadeInUp" data-wow-delay="0.1s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
 				</div>
 				
 				<div class="screen wow fadeInUp" data-wow-delay="0.2s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
 				</div>
 				
 				<div class="screen wow fadeInUp" data-wow-delay="0.3s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
+					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
 				</div>
 				
-				<div class="screen wow fadeInUp" data-wow-delay="0.4s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
-				</div>
-				
-				<div class="screen wow fadeInUp" data-wow-delay="0.5s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
-				</div>			
-				
-				<div class="screen wow fadeInUp" data-wow-delay="0.6s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
-				</div>
-
-				<div class="screen wow fadeInUp" data-wow-delay="0.7s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/screenshot.jpg" alt="Screenshot"></a>
-				</div>
+			
 			</div>
 		</div>
+             </div>
+		</div>     
 	</div>
 </div>
-
-
+</div>
   
+
+
+
+
+
+
+
+
+
 <!-- /.footer -->
 <footer id="footer">
 	<div class="container">

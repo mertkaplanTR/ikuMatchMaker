@@ -18,7 +18,7 @@ public partial class afterLogin : System.Web.UI.Page
         else
         { 
             sonuc.Text = Session["isim"].ToString();
-            isim.Text = Session["isim"].ToString();
+            
         }
         
 
@@ -57,18 +57,22 @@ public partial class afterLogin : System.Web.UI.Page
        
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
         con.Open();
-        //SECURILEY SOLVED THIS BITCH 
+        //SECURILEY SOLVED THIS  
+        
         string sql = "SELECT [name] FROM [MatchMaker].[user].[Info] where userID=@userID";
         SqlCommand getName = new SqlCommand(sql,con);
-        getName.Parameters.AddWithValue("userID", isim.Text);
+        getName.Parameters.AddWithValue("userID", sonuc.Text);
         isim.Text = getName.ExecuteScalar().ToString();
 
-    
-        SqlCommand getSurname = new SqlCommand("SELECT [surname] FROM [MatchMaker].[user].[Info] where userID='1'", con);
+        string sql2 = "SELECT [surname] FROM [MatchMaker].[user].[Info] where userID=@userID";
+        SqlCommand getSurname = new SqlCommand(sql2, con);
+        getSurname.Parameters.AddWithValue("userID", sonuc.Text);
         soyadi.Text = getSurname.ExecuteScalar().ToString();
-        SqlCommand getEmail = new SqlCommand("SELECT [mailAddress] FROM [MatchMaker].[user].[Info] where userID='1'", con);
+
+        string sql3 = "SELECT [mailAddress] FROM [MatchMaker].[user].[Info] where userID=@userID";
+        SqlCommand getEmail = new SqlCommand(sql3, con);
+        getEmail.Parameters.AddWithValue("userID", sonuc.Text);
         email.Text = getEmail.ExecuteScalar().ToString();
-        
         con.Close();
     }
 
