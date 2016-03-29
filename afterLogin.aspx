@@ -172,19 +172,19 @@
 			<div id="screenshots" class="owl-carousel">
 				<!-- /.screenshot images -->
 				<div class="screen wow fadeInUp">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
+					<a href="images/aa.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
 				</div>
 				
 				<div class="screen wow fadeInUp" data-wow-delay="0.1s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
+					<a href="images/adembavas.jpg" data-toggle="lightbox"><img src="images/adembavas.jpg" alt="Screenshot"></a>
 				</div>
 				
 				<div class="screen wow fadeInUp" data-wow-delay="0.2s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
+					<a href="images/aa.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
 				</div>
 				
 				<div class="screen wow fadeInUp" data-wow-delay="0.3s">
-					<a href="images/screenshot.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
+					<a href="images/aa.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
 				</div>
 				
 			

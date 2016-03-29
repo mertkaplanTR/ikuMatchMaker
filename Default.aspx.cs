@@ -23,9 +23,9 @@ public partial class _Default : System.Web.UI.Page
         if (DropDownList1.SelectedValue=="0")
         {
             
-            string sql3 = "select [name] from [user].[Info] where campus=@userID";
+            string sql3 = "select [name] from [user].[Info] where userID=@userID";
             SqlCommand getEmail = new SqlCommand(sql3, con);
-            getEmail.Parameters.AddWithValue("userID",5);
+            getEmail.Parameters.AddWithValue("userID",1);
             Label1.Text = getEmail.ExecuteScalar().ToString();
             con.Close();
         }

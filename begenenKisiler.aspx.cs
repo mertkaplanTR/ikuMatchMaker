@@ -31,5 +31,20 @@ public partial class begenenKisiler : System.Web.UI.Page
         getName.Parameters.AddWithValue("userID", sonuc.Text);
         begenenKisiAdi.Text = getName.ExecuteScalar().ToString();
 
+        string sql2 = "select campus FROM [MatchMaker].[user].[Info] where userID=@userID";
+        SqlCommand getCampus = new SqlCommand(sql2, con);
+        getCampus.Parameters.AddWithValue("userID", sonuc.Text);
+        campus.Text = getCampus.ExecuteScalar().ToString();
+
+        string sql3 = "select department FROM [MatchMaker].[user].[Info] where userID=@userID";
+        SqlCommand getDepartment = new SqlCommand(sql3, con);
+        getDepartment.Parameters.AddWithValue("userID", sonuc.Text);
+        department.Text = getDepartment.ExecuteScalar().ToString();
+
+
+
+
+
+
     }
 }

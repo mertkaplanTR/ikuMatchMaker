@@ -90,8 +90,9 @@
 			
 				<!-- /.package features -->
 			   <ul class="price-feature text-center">
-				  <li><strong>Kampus:</strong> Atakoy Kampusu</li>
-				  <li><strong>Bolum:</strong> CSE</li>
+				  <li><strong>Kampus:</strong> <asp:Label ID="campus" runat="server" Text=""></asp:Label></li>
+				  <li><strong>Bolum:</strong> <asp:Label ID="department" runat="server" Text=""></asp:Label></li>
+                   <%-- BURADAN DEVAM ET --%>
 				  <li><strong>Yasi:</strong> 23</li>
 				  <li><strong>Sehir:</strong>Istanbul</li>
 				  				  
