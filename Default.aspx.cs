@@ -20,7 +20,20 @@ public partial class _Default : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
         con.Open();
-        SqlCommand getName = new SqlCommand("SELECT * FROM [dbo].[user2] ", con);
-        Label1.Text = getName.ExecuteScalar().ToString();
+        if (DropDownList1.SelectedValue=="0")
+        {
+            
+            string sql3 = "select [name] from [user].[Info] where campus=@userID";
+            SqlCommand getEmail = new SqlCommand(sql3, con);
+            getEmail.Parameters.AddWithValue("userID",5);
+            Label1.Text = getEmail.ExecuteScalar().ToString();
+            con.Close();
+        }
+        else
+            Label1.Text="not from db";
+    }
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }

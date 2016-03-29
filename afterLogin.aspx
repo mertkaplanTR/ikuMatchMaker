@@ -95,10 +95,10 @@
          <br /><br />
          Kampus:<br />
          <asp:DropDownList ID="campus" runat="server">
-             <asp:ListItem>Atakoy</asp:ListItem>
-             <asp:ListItem>Hukuk</asp:ListItem>
-             <asp:ListItem>Hazırlık</asp:ListItem>
-             <asp:ListItem>MYO</asp:ListItem>
+             <asp:ListItem Value="0">Atakoy</asp:ListItem>
+             <asp:ListItem Value="1">Hukuk</asp:ListItem>
+             <asp:ListItem Value="2">Hazırlık</asp:ListItem>
+             <asp:ListItem Value="3">MYO</asp:ListItem>
          </asp:DropDownList><br /><br />
          Bolum:<br />
          <asp:DropDownList ID="bolum" runat="server">
@@ -135,10 +135,14 @@
              <asp:ListItem>160 cm - 180 cm</asp:ListItem>
              <asp:ListItem>180 cm - 200 cm</asp:ListItem>
          </asp:DropDownList><br />
-         <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>
-         <asp:Label ID="querySonuc" runat="server" Text=""></asp:Label>
+         
+         
         </form> 
+                
+               <%-- <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>--%>
 			</div>
+            <asp:Label ID="querySonuc" runat="server" Text=""></asp:Label>
+            <asp:Button ID="ara2" runat="server" Text="Button" OnClick="ara2_Click" />
             <!---------------------------------- 222222'LUK KOLONUN BITISI----------------->
 
 

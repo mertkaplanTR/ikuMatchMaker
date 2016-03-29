@@ -33,22 +33,22 @@ public partial class afterLogin : System.Web.UI.Page
     
     }
 
-    private void detayliAraButonu_Click()
-    {
-        if(campus.SelectedValue=="1")
-        {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
-        con.Open();
-        string sql = "select * from [user].[Info] where campus=@userID";
-        SqlCommand getQuery = new SqlCommand(sql, con);
-        getQuery.Parameters.AddWithValue("userID", 5);
-        querySonuc.Text = getQuery.ExecuteScalar().ToString();
-        con.Close();
-            }
-    }
+ 
 
-    protected void detayliAraButonu_Click(object sender, EventArgs e)
-    { Response.Redirect("giris.aspx"); }
+    //protected void detayliAraButonu_Click(object sender, EventArgs e)
+    //{
+    //    if (campus.SelectedValue == "0")
+    //    {
+    //        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
+    //        con.Open();
+    //        string sql = "select [name] from [user].[Info] where campus=5";
+    //        SqlCommand getQuery = new SqlCommand(sql, con);
+    //        //getQuery.Parameters.AddWithValue("userID", 5);
+    //        querySonuc.Text = getQuery.ExecuteScalar().ToString();
+    //        con.Close();
+    //    }
+    
+    //}
 
     void getLikedNumber()
     {
@@ -98,6 +98,23 @@ public partial class afterLogin : System.Web.UI.Page
     }
 
 
-  
 
+  /// <summary>
+  /// ///////////sorun var butonlarda query dogru default.aspx'de calısıyor
+  /// </summary>
+  /// <param name="sender"></param>
+  /// <param name="e"></param>
+    protected void ara2_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
+        con.Open();
+        if (campus.SelectedValue == "0")
+        {
+            string sql3 = "select [name] from [user].[Info] where userID=1";
+            SqlCommand getEmail = new SqlCommand(sql3, con);
+            // getEmail.Parameters.AddWithValue("userID", sonuc.Text);
+            querySonuc.Text = getEmail.ExecuteScalar().ToString();
+        }
+        con.Close();
+    }
 }

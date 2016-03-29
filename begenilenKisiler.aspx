@@ -36,7 +36,9 @@
 				  <span class="icon-bar"></span>
 				  <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand site-name" href="#top"><img src="images/logo3.png" alt="logo"></a>
+				<a class="navbar-brand site-name" href="#top">
+                    <asp:Label ID="sonuc" runat="server" Text=""></asp:Label>
+                    <img src="images/logo3.png" alt="logo"></a>
 			  </div>
 			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
 				<ul class="nav navbar-nav">

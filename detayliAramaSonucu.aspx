@@ -26,6 +26,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Label ID="sonuc" runat="server" Text="">oguzhan</asp:Label>
     <div>
         
     </div>
