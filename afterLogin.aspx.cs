@@ -20,24 +20,43 @@ public partial class afterLogin : System.Web.UI.Page
             sonuc.Text = Session["isim"].ToString();
             
         }
-        
 
+
+         
         //alttakiler henuz session ile alınmıyor onları session id ile alip dinamik yapmamız gerekli
         //adem database'i ayarladıktan sonra id'ye gore alıp dinamik yap!
 
         getLikedNumber();
         getLikerNumber();
         getInfo();
-       
+        
+    
     }
+
+    private void detayliAraButonu_Click()
+    {
+        if(campus.SelectedValue=="1")
+        {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
+        con.Open();
+        string sql = "select * from [user].[Info] where campus=@userID";
+        SqlCommand getQuery = new SqlCommand(sql, con);
+        getQuery.Parameters.AddWithValue("userID", 5);
+        querySonuc.Text = getQuery.ExecuteScalar().ToString();
+        con.Close();
+            }
+    }
+
+    protected void detayliAraButonu_Click(object sender, EventArgs e)
+    { Response.Redirect("giris.aspx"); }
 
     void getLikedNumber()
     {
-        //person id'si 3 olan kişi kaç kişiyi like etmiş?
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
         con.Open();
-       
-        SqlCommand getLikedNumber = new SqlCommand("select count(*) from [system].[Likes] where person1=1", con);
+        string sql = "select count(*) from [system].[Likes] where person1=@userID";
+        SqlCommand getLikedNumber = new SqlCommand(sql, con);
+        getLikedNumber.Parameters.AddWithValue("userID", sonuc.Text);
         likedNumber.Text = getLikedNumber.ExecuteScalar().ToString();
         con.Close();
     }
@@ -46,7 +65,9 @@ public partial class afterLogin : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
         con.Open();
-        SqlCommand getLikerNumber = new SqlCommand("select count(*) from [system].[Likes] where person2='1'", con);
+        string sql = "select count(*) from [system].[Likes] where person2=@userID";
+        SqlCommand getLikerNumber = new SqlCommand(sql, con);
+        getLikerNumber.Parameters.AddWithValue("userID", sonuc.Text);
         likerNumber.Text = getLikerNumber.ExecuteScalar().ToString();
         con.Close();
     }
@@ -76,7 +97,7 @@ public partial class afterLogin : System.Web.UI.Page
         con.Close();
     }
 
-    public object sonucu { get; set; }
 
-    public string donen { get; set; }
+  
+
 }

@@ -26,7 +26,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-  <body data-spy="scroll" data-target="#navbar-scroll">
+  <body>
 
     <!-- /.preloader -->
     <div id="preloader"></div>

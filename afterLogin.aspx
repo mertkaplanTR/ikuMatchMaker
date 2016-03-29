@@ -28,7 +28,7 @@
 <body>
 
     <form id="form1" runat="server">
-    <body data-spy="scroll" data-target="#navbar-scroll">
+   
     <!-- /.preloader -->
     <div id="preloader"></div>
     <div id="top"></div>
@@ -135,7 +135,8 @@
              <asp:ListItem>160 cm - 180 cm</asp:ListItem>
              <asp:ListItem>180 cm - 200 cm</asp:ListItem>
          </asp:DropDownList><br />
-         <asp:Button ID="Button1" runat="server" Text="Ara" CssClass="btn btn-price"/>
+         <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>
+         <asp:Label ID="querySonuc" runat="server" Text=""></asp:Label>
         </form> 
 			</div>
             <!---------------------------------- 222222'LUK KOLONUN BITISI----------------->
