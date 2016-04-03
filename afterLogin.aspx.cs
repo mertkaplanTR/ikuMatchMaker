@@ -99,11 +99,7 @@ public partial class afterLogin : System.Web.UI.Page
 
 
 
-  /// <summary>
-  /// ///////////sorun var butonlarda query dogru default.aspx'de calısıyor
-  /// </summary>
-  /// <param name="sender"></param>
-  /// <param name="e"></param>
+
     protected void ara2_Click(object sender, EventArgs e)
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
@@ -117,4 +113,7 @@ public partial class afterLogin : System.Web.UI.Page
         }
         con.Close();
     }
+
+
+
 }

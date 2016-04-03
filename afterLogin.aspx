@@ -60,12 +60,12 @@
 				</ul>
 			  </div>
             <center> 
-                <form action="" class="search-form">
+                
                 <div class="form-group has-feedback">
             		<label for="search" class="sr-only">Search</label>
               		<asp:TextBox ID="search" runat="server" CssClass="form-control" placeholder="Hızlı Ara"></asp:TextBox>
             	</div>
-            </form>
+            
 
             </center>
 		</div>
@@ -84,7 +84,7 @@
 		<div class="row package-option">
             <!---------------------------------- 222222'LiK KOLONUN BASLANGICI----------------->
 			<div class="col-sm-2">
-     <form class="form-horizontal" role="form">
+     
          <h3>Detaylı Arama</h3><br />
          Cinsiyet:
          <br />
@@ -137,7 +137,7 @@
          </asp:DropDownList><br />
          
          
-        </form> 
+    
                 
                <%-- <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>--%>
 			</div>
@@ -234,7 +234,7 @@
 	<script src="js/ekko-lightbox-min.js"></script>
     <script src="/js/bootstrap-select.js"></script>
     
-  </body>
-    </form>
+        </form>
+   
 </body>
 </html>
