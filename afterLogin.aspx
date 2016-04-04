@@ -51,11 +51,11 @@
 				<a class="navbar-brand site-name" href="#top"><img src="images/logo3.png" alt="logo"></a>
 			  </div>
 			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav" id="giris">
                     <li><a href="#top">Ana Sayfa</a></li>
-
-					<li><a href="#messages">Mesajlar</a></li>
-                     <li><a href="#profilim">Bildirimler</a></li>
+                    
+					<li><a href="~giris.aspx">Mesajlar</a></li>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/giris.aspx" >Bildirimler</asp:HyperLink>
 					<li><a href="#contact">Cikis</a></li>
 				</ul>
 			  </div>
@@ -143,6 +143,7 @@
 			</div>
             <asp:Label ID="querySonuc" runat="server" Text=""></asp:Label>
             <asp:Button ID="ara2" runat="server" Text="Button" OnClick="ara2_Click" />
+            
             <!---------------------------------- 222222'LUK KOLONUN BITISI----------------->
 
 

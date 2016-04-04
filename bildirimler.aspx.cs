@@ -11,4 +11,7 @@ public partial class bildirimler : System.Web.UI.Page
     {
 
     }
+
+
+
 }

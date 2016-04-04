@@ -49,6 +49,5 @@ public partial class notification : System.Web.UI.Page
         con.Open();
         string sql2 = "select u.name,u.surname from [user].[Info] as u inner join [system].[Likes] as t on t.person1=u.userID WHERE t.isOpen=0 and t.person2=1";
         SqlCommand getLikersName = new SqlCommand(sql2, con);
-
     }
 }
