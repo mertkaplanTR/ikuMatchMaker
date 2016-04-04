@@ -29,7 +29,7 @@ public partial class afterLogin : System.Web.UI.Page
         getLikedNumber();
         getLikerNumber();
         getInfo();
-        
+        getNewNotification();
     
     }
 
@@ -49,6 +49,18 @@ public partial class afterLogin : System.Web.UI.Page
     //    }
     
     //}
+
+    void getNewNotification()
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
+        con.Open();
+        string sql = "select count(*) from [system].[Likes] where person2=1 and isOpen=0";
+        SqlCommand getLikedNumber = new SqlCommand(sql, con);
+        getLikedNumber.Parameters.AddWithValue("userID", sonuc.Text);
+        sonuc2.Text = getLikedNumber.ExecuteScalar().ToString();
+        con.Close();
+    }
+
 
     void getLikedNumber()
     {

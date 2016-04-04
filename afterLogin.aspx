@@ -53,9 +53,9 @@
 			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
 				<ul class="nav navbar-nav" id="giris">
                     <li><a href="#top">Ana Sayfa</a></li>
-                    
+                    <li><a href="~bildirimler.aspx">Bildirimler</a></li>
 					<li><a href="~giris.aspx">Mesajlar</a></li>
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/giris.aspx" >Bildirimler</asp:HyperLink>
+                    
 					<li><a href="#contact">Cikis</a></li>
 				</ul>
 			  </div>
@@ -77,7 +77,8 @@
 		<div class="text-center">
 			<h2 class="wow fadeInCenter">Profil Bilgilerim</h2>
 			<div class="title-line wow fadeInCenter">Hosgeldin session ID'si:<asp:Literal ID="sonuc" runat="server"></asp:Literal>
-			</div>
+			<div class="title-line wow fadeInCenter">Yeni bildirim:<asp:HyperLink ID="sonuc2" runat="server" NavigateUrl="~/bildirimler.aspx"></asp:HyperLink>
+            </div>
 		</div>
 
  
