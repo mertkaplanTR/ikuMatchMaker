@@ -118,7 +118,7 @@
 			</div>
 
     <div class="col-sm-10">
-           <h4>BENI YENI BEGENENLER</h4>
+           <center><h4>BENI YENI BEGENENLER</h4></center>
 			 <div class="price-box wow fadeInUp">
         <asp:GridView ID="GridView1" CssClass="table table-hover table-striped" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
             <Columns>
@@ -135,8 +135,14 @@
                  <br />
                  <br />
                  <br />
-                 <asp:GridView ID="GridView2" runat="server">
+                 <center><h4>OKUNMUS BILDIRIM BEGENMELERI</h4><br /></center>
+                 <asp:GridView ID="GridView2" CssClass="table table-hover table-striped" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
+                     <Columns>
+                         <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                         <asp:BoundField DataField="surname" HeaderText="surname" SortExpression="surname" />
+                     </Columns>
                  </asp:GridView>
+                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbconnection %>" SelectCommand="select u.name,u.surname from [user].[Info] as u inner join [system].[Likes] as t on t.person1=u.userID WHERE t.isOpen=1 and t.person2=1"></asp:SqlDataSource>
                  <br />
              
              

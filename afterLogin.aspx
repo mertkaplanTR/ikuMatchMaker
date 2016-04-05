@@ -86,7 +86,7 @@
             <!---------------------------------- 222222'LiK KOLONUN BASLANGICI----------------->
 			<div class="col-sm-2">
      
-         <h3>Detaylı Arama</h3><br />
+          <h3>Detaylı Arama</h3><br />
          Cinsiyet:
          <br />
          <asp:DropDownList ID="sex" runat="server">
@@ -111,13 +111,13 @@
          Sac Tipi:<br />
          <asp:DropDownList ID="sacTipi" runat="server">
               <asp:ListItem>Duz</asp:ListItem>
-             <asp:ListItem>Dalgalı</asp:ListItem>
-             <asp:ListItem>Kıvırcık</asp:ListItem>
+             <asp:ListItem>Dalgali</asp:ListItem>
+             <asp:ListItem>Kivircik</asp:ListItem>
          </asp:DropDownList><br /><br />
 
          Sac Rengi:<br />
          <asp:DropDownList ID="sacRengi" runat="server">
-              <asp:ListItem>Sarı</asp:ListItem>
+              <asp:ListItem>Sari</asp:ListItem>
              <asp:ListItem>Siyah</asp:ListItem>
              <asp:ListItem>Kahve Rengi</asp:ListItem>
          </asp:DropDownList><br /><br />
@@ -130,17 +130,16 @@
              <asp:ListItem>Siyah</asp:ListItem>
          </asp:DropDownList><br /><br />
 
-         Boyu:<br />
+<%--         Boyu:<br />
          <asp:DropDownList ID="Boy" runat="server">
               <asp:ListItem>140 cm - 160 cm</asp:ListItem>
              <asp:ListItem>160 cm - 180 cm</asp:ListItem>
              <asp:ListItem>180 cm - 200 cm</asp:ListItem>
-         </asp:DropDownList><br />
-         
+         </asp:DropDownList><br />--%>
          
     
                 
-               <%-- <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>--%>
+              <%-- <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>--%>
 			</div>
             <asp:Label ID="querySonuc" runat="server" Text=""></asp:Label>
             <asp:Button ID="ara2" runat="server" Text="Button" OnClick="ara2_Click" />
