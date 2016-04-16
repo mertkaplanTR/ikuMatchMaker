@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Kayıt2Sayfa.aspx.cs" Inherits="Kayıt2Sayfa" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="kayitsayfa2.aspx.cs" Inherits="Kayıt2Sayfa" %>
 
 <!DOCTYPE html>
 
