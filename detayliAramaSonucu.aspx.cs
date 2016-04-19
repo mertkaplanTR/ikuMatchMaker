@@ -18,17 +18,9 @@ public partial class detayliAramaSonucu : System.Web.UI.Page
         else
         {
             sonuc.Text = Session["isim"].ToString();
+            Label1.Text = Session["bolum"].ToString();
 
         }
-
-        getInfo();
-        /* BindPeople();*/
-
-        //alttakiler henuz session ile alınmıyor onları session id ile alip dinamik yapmamız gerekli
-        //adem database'i ayarladıktan sonra id'ye gore alıp dinamik yap!
-
-
-
     }
 
     void getInfo()
@@ -56,18 +48,7 @@ public partial class detayliAramaSonucu : System.Web.UI.Page
     }
 
 
-    /* protected void BindPeople()
-     {
-         string connectionString = System.Configuration.ConfigurationManager.AppSettings["connString"];
-         SqlConnection connection = new SqlConnection(connectionString);
-         connection.Open();
-         DataTable dtPeople = new DataTable();
-         SqlDataAdapter adapter = new SqlDataAdapter("SELECT u.[profilePicture],u.name,u.surname FROM [user].[Info] as u ", connection);
-         adapter.Fill(dtPeople);
-         ViewState["dtPeople"] = dtPeople;
-         dlPeople.DataSource = dtPeople;
-         dlPeople.DataBind();
-     }*/
+
     protected void detayliAraButonu_Click(object sender, EventArgs e)
     {
         

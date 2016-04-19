@@ -12,12 +12,11 @@ public partial class Kayıt2Sayfa : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (IsPostBack)
-            return;
-        //sayfa açılırken kullanıcı login olmuşmu olmamışmı kontrol ediyoruz, 
-        // login ise giriş yap sayfasını açamasın
-        if (Session["UserModel"] != null)
-            Response.Redirect("afterLogin.aspx");
+        if (Session["isim"] == null || Session["isim"] == "")
+            Response.Redirect("giris.aspx");
+        else
+        {}
+        
     }
 
     protected void btnKayıt2Sayfa_Click(object sender, EventArgs e)

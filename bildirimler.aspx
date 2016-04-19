@@ -29,37 +29,22 @@
 <div id="menu">
 	<nav class="navbar-wrapper navbar-default" role="navigation">
 		<div class="container">
-			  <div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
-				  <span class="sr-only">Toggle navigation</span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand site-name" href="#top"><img src="images/logo3.png" alt="logo"></a>
-			  </div>
+			 
+	 
 			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
-				<ul class="nav navbar-nav" id="giris">
-                    <li><a href="#top">Ana Sayfa</a></li>
-                    
-					<li><a href="~giris.aspx">Mesajlar</a></li>
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/giris.aspx" >Bildirimler</asp:HyperLink>
-					<li><a href="#contact">Cikis</a></li>
+				<ul class="nav navbar-nav">
+					<li><a href="index.aspx">Anasayfa</a></li>
+					<li><a href="bildirimler.aspx">Bildirimler</a></li>
+					<li><a href="mesaj.aspx">Mesajlar</a></li>
+					<li><a href="bilgiguncelle.aspx">Ayarlar</a></li>
+					<li><a href="cikis.aspx">Çıkış</a></li>
+					
 				</ul>
 			  </div>
-            <center> 
-                
-                <div class="form-group has-feedback">
-            		<label for="search" class="sr-only">Search</label>
-              		<asp:TextBox ID="search" runat="server" CssClass="form-control" placeholder="Hızlı Ara"></asp:TextBox>
-            	</div>
-            
-
-            </center>
 		</div>
 	</nav>
 </div>
-<div class="col-sm-2">
+<%--<div class="col-sm-2">
         <h3>Detaylı Arama</h3><br />
          Cinsiyet:
          <br />
@@ -115,9 +100,9 @@
     
                 
                <%-- <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>--%>
-			</div>
+			
 
-    <div class="col-sm-10">
+    <div class="col-sm-12">
            <center><h4>BENI YENI BEGENENLER</h4></center>
 			 <div class="price-box wow fadeInUp">
         <asp:GridView ID="GridView1" CssClass="table table-hover table-striped" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">

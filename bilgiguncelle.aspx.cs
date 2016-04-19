@@ -71,7 +71,7 @@ public partial class bilgiguncelle : System.Web.UI.Page
         else
         {
             sonuc.Text = Session["isim"].ToString();
-            UserID = Convert.ToInt32(Session["isim"]) + 1;
+            UserID = Convert.ToInt32(Session["isim"]);
         }
 
         if (!Page.IsPostBack)

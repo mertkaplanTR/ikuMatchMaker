@@ -29,35 +29,18 @@
  <div id="menu">
 	<nav class="navbar-wrapper navbar-default" role="navigation">
 		<div class="container">
-			  <div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
-				  <span class="sr-only">Toggle navigation</span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand site-name" href="#top">
-                    <asp:Label ID="sonuc" runat="server" Text=""></asp:Label>
-                    <img src="images/logo3.png" alt="logo"></a>
-			  </div>
+			 
+	 
 			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
 				<ul class="nav navbar-nav">
-                    <li><a href="#top">Ana Sayfa</a></li>
-
-					<li><a href="#messages">Mesajlar</a></li>
-                     <li><a href="#profilim">Bildirimler</a></li>
-					<li><a href="#contact">Cikis</a></li>
+					<li><a href="index.aspx">Anasayfa</a></li>
+					<li><a href="bildirimler.aspx">Bildirimler</a></li>
+					<li><a href="mesaj.aspx">Mesajlar</a></li>
+					<li><a href="bilgiguncelle.aspx">Ayarlar</a></li>
+					<li><a href="cikis.aspx">Çıkış</a></li>
+                    <asp:Label ID="sonuc" runat="server" Text=""></asp:Label>
 				</ul>
 			  </div>
-            <center> 
-                <form action="" class="search-form">
-                <div class="form-group has-feedback">
-            		<label for="search" class="sr-only">Search</label>
-              		<asp:TextBox ID="search" runat="server" CssClass="form-control" placeholder="Hızlı Ara"></asp:TextBox>
-            	</div>
-            </form>
-
-            </center>
 		</div>
 	</nav>
 </div>

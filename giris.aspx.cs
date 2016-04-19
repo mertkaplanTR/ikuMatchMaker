@@ -13,7 +13,15 @@ public partial class giris : System.Web.UI.Page
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
     protected void Page_Load(object sender, EventArgs e)
     {
-        con.Open();
+        if (Session["isim"] != null )
+            Response.Redirect("afterLogin.aspx");
+        else
+        {
+            con.Open();
+
+        }
+
+       
 
     }
     protected void girisButonu_Click(object sender, EventArgs e)

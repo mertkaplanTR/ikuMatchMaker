@@ -30,25 +30,21 @@ public partial class afterLogin : System.Web.UI.Page
         getLikerNumber();
         getInfo();
         getNewNotification();
+   
     
     }
 
+    void getSessions()
+    {
+        Session["cinsiyet"] = sex.Text;
+        Session["kampus"] = campus.Text;
+        Session["bolum"] = bolum.Text;
+        Session["sactipi"] = sacTipi.Text;
+        Session["sacrengi"] = sacRengi.Text;
+        Session["gozrengi"] = gozRengi.Text;
+    }
  
-
-    //protected void detayliAraButonu_Click(object sender, EventArgs e)
-    //{
-    //    if (campus.SelectedValue == "0")
-    //    {
-    //        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
-    //        con.Open();
-    //        string sql = "select [name] from [user].[Info] where campus=5";
-    //        SqlCommand getQuery = new SqlCommand(sql, con);
-    //        //getQuery.Parameters.AddWithValue("userID", 5);
-    //        querySonuc.Text = getQuery.ExecuteScalar().ToString();
-    //        con.Close();
-    //    }
-    
-    //}
+  
 
     void getNewNotification()
     {
@@ -110,23 +106,11 @@ public partial class afterLogin : System.Web.UI.Page
     }
 
 
-
-
-    protected void ara2_Click(object sender, EventArgs e)
+    protected void detayliAraButonu_Click(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString); // sonrada neklendi. 
-        con.Open();
-        if (campus.SelectedValue == "0")
-        {
-            string sql3 = "select [name] from [user].[Info] where userID=1";
-            SqlCommand getEmail = new SqlCommand(sql3, con);
-            // getEmail.Parameters.AddWithValue("userID", sonuc.Text);
-            querySonuc.Text = getEmail.ExecuteScalar().ToString();
-        }
-        con.Close();
+        getSessions();
+        Response.Redirect("detayliAramaSonucu.aspx");
+       // Label3.Text = Session["cinsiyet"].ToString();
+        //sessionu basarılı sekilde alıyor demek!
     }
-
-
-
- 
 }

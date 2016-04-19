@@ -35,11 +35,28 @@
 
 <!-- /.parallax full screen background image -->
 <div class="fullscreen landing parallax" style="background-image:url('images/bg2.jpg');" data-img-width="2000" data-img-height="1333" data-diff="100">
-	
+	<div id="menu">
+	<nav class="navbar-wrapper navbar-default" role="navigation">
+		<div class="container">
+			 
+	 
+			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="index.aspx">Anasayfa</a></li>
+					<li><a href="bildirimler.aspx">Bildirimler</a></li>
+					<li><a href="mesaj.aspx">Mesajlar</a></li>
+					<li><a href="bilgiguncelle.aspx">Ayarlar</a></li>
+					<li><a href="cikis.aspx">Çıkış</a></li>
+					
+				</ul>
+			  </div>
+		</div>
+	</nav>
+</div>
 	<div class="overlay">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-7">
+				<div class="col-md-4">
                    
 					<!-- /.logo -->
 					<div class="logo wow fadeInDown"> <a href="index.aspx">
@@ -61,20 +78,17 @@
 					</div>				  
 
 					<!-- /.header button FEAUTRES VE DOWNLOAD BUTONLARI BURADA-->
-					<div class="head-btn wow fadeInLeft">
-						<br /><a href="giris.aspx" class="btn-primary">Giris Yap</a>
-						<!--<a href="#download" class="btn-default">Download</a>-->
-					</div>
+					
 	
 		  
 
 				</div> 
 				
 				<!-- /.signup form -->
-				<div class="col-md-5">
+				<div class="col-md-8">
 		
 					<div class="signup-header wow fadeInUp">
-						<h3 class="form-title text-center">KAYIT OL</h3>
+						<h3 class="form-title text-center">Bilgi Güncelleme Paneli</h3>
 
 						<input type="hidden" name="id" value="deneme2">
                             <div class="form-group">

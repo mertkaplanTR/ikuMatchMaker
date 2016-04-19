@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        YAPIM ASAMASINDA
         <asp:TextBox ID="sonuc" runat="server"></asp:TextBox>
     </div>
     </form>

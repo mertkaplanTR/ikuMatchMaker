@@ -12,12 +12,13 @@ public partial class index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (IsPostBack)
-            return;
-        //sayfa açılırken kullanıcı login olmuşmu olmamışmı kontrol ediyoruz, 
-        // login ise giriş yap sayfasını açamasın
-        if (Session["UserModel"] != null)
+        if (Session["isim"] != null )
             Response.Redirect("afterLogin.aspx");
+        else
+        {
+            
+
+        }
     }
 
     protected void kaydolButon_Click(object sender, EventArgs e)

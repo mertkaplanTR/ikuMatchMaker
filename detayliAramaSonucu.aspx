@@ -26,45 +26,33 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
 <div id="menu">
 	<nav class="navbar-wrapper navbar-default" role="navigation">
 		<div class="container">
-			  <div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
-				  <span class="sr-only">Toggle navigation</span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				  <span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand site-name" href="#top"><img src="images/logo3.png" alt="logo"/></a>
-			  </div>
+			 
+	 
 			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
-				<ul class="nav navbar-nav" id="giris">
-                    <li><a href="#top">Ana Sayfa</a></li>
-                    
-					<li><a href="~giris.aspx">Mesajlar</a></li>
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/giris.aspx" >Bildirimler</asp:HyperLink>
-					<li><a href="#contact">Cikis</a></li>
+				<ul class="nav navbar-nav">
+					<li><a href="index.aspx">Anasayfa</a></li>
+					<li><a href="bildirimler.aspx">Bildirimler</a></li>
+					<li><a href="mesaj.aspx">Mesajlar</a></li>
+					<li><a href="bilgiguncelle.aspx">Ayarlar</a></li>
+					<li><a href="cikis.aspx">Çıkış</a></li>
+					
 				</ul>
 			  </div>
-
-                
-                <div class="form-group has-feedback">
-            		<label for="search" class="sr-only">Search</label>
-              		<asp:TextBox ID="search" runat="server" CssClass="form-control" placeholder="Hızlı Ara"></asp:TextBox>
-            	</div>
-            
 		</div>
 	</nav>
 </div>
 <div class="col-sm-2">
-        <h3>Detaylı Arama</h3><br />
+        <h3>Detaylı Arama</h3>
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        <br />
          Cinsiyet:
          <br />
          <asp:DropDownList ID="sex" runat="server">
-             <asp:ListItem>Kadın</asp:ListItem>
              <asp:ListItem>Erkek</asp:ListItem>
+             <asp:ListItem>Kadın</asp:ListItem>
          </asp:DropDownList>
          <br /><br />
          Kampus:<br />
@@ -76,8 +64,8 @@
          </asp:DropDownList><br /><br />
          Bolum:<br />
          <asp:DropDownList ID="bolum" runat="server">
-              <asp:ListItem>Muhendislik</asp:ListItem>
              <asp:ListItem>Mimarlik</asp:ListItem>
+              <asp:ListItem>Muhendislik</asp:ListItem>
              <asp:ListItem>Iktisat - Isletme</asp:ListItem>
          </asp:DropDownList><br /><br />
 
@@ -90,8 +78,8 @@
 
          Sac Rengi:<br />
          <asp:DropDownList ID="sacRengi" runat="server">
-              <asp:ListItem>Sari</asp:ListItem>
              <asp:ListItem>Siyah</asp:ListItem>
+              <asp:ListItem>Sari</asp:ListItem>
              <asp:ListItem>Kahve Rengi</asp:ListItem>
          </asp:DropDownList><br /><br />
 
@@ -159,10 +147,114 @@
                 <asp:HyperLinkField Text="Profile Git" />
                 <asp:HyperLinkField NavigateUrl="~/YerBildirim.aspx" Text="Uye Nerede ?" />
             </Columns>
-        </asp:GridView>                        
+        </asp:GridView>              
              </div>
         </div>
 
+        </div>
+        <p>
+            
+            <asp:DataList ID="DataList2" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyField="userID" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Both">
+                <FooterStyle BackColor="#CCCCCC" />
+                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                <ItemStyle BackColor="White" />
+                <ItemTemplate>
+                    userID:
+                    <asp:Label ID="userIDLabel" runat="server" Text='<%# Eval("userID") %>' />
+                    <br />
+                    name:
+                    <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                    <br />
+                    surname:
+                    <asp:Label ID="surnameLabel" runat="server" Text='<%# Eval("surname") %>' />
+                    <br />
+                    sex:
+                    <asp:Label ID="sexLabel" runat="server" Text='<%# Eval("sex") %>' />
+                    <br />
+                    mailAddress:
+                    <asp:Label ID="mailAddressLabel" runat="server" Text='<%# Eval("mailAddress") %>' />
+                    <br />
+                    password:
+                    <asp:Label ID="passwordLabel" runat="server" Text='<%# Eval("password") %>' />
+                    <br />
+                    birthday:
+                    <asp:Label ID="birthdayLabel" runat="server" Text='<%# Eval("birthday") %>' />
+                    <br />
+                    phoneNumber:
+                    <asp:Label ID="phoneNumberLabel" runat="server" Text='<%# Eval("phoneNumber") %>' />
+                    <br />
+                    facebook:
+                    <asp:Label ID="facebookLabel" runat="server" Text='<%# Eval("facebook") %>' />
+                    <br />
+                    twitter:
+                    <asp:Label ID="twitterLabel" runat="server" Text='<%# Eval("twitter") %>' />
+                    <br />
+                    instagram:
+                    <asp:Label ID="instagramLabel" runat="server" Text='<%# Eval("instagram") %>' />
+                    <br />
+                    snapchat:
+                    <asp:Label ID="snapchatLabel" runat="server" Text='<%# Eval("snapchat") %>' />
+                    <br />
+                    campus:
+                    <asp:Label ID="campusLabel" runat="server" Text='<%# Eval("campus") %>' />
+                    <br />
+                    department:
+                    <asp:Label ID="departmentLabel" runat="server" Text='<%# Eval("department") %>' />
+                    <br />
+                    shortInfo:
+                    <asp:Label ID="shortInfoLabel" runat="server" Text='<%# Eval("shortInfo") %>' />
+                    <br />
+                    hairType:
+                    <asp:Label ID="hairTypeLabel" runat="server" Text='<%# Eval("hairType") %>' />
+                    <br />
+                    hairColor:
+                    <asp:Label ID="hairColorLabel" runat="server" Text='<%# Eval("hairColor") %>' />
+                    <br />
+                    eyeColor:
+                    <asp:Label ID="eyeColorLabel" runat="server" Text='<%# Eval("eyeColor") %>' />
+                    <br />
+                    height:
+                    <asp:Label ID="heightLabel" runat="server" Text='<%# Eval("height") %>' />
+                    <br />
+                    weight:
+                    <asp:Label ID="weightLabel" runat="server" Text='<%# Eval("weight") %>' />
+                    <br />
+                    place:
+                    <asp:Label ID="placeLabel" runat="server" Text='<%# Eval("place") %>' />
+                    <br />
+                    profilePicture:
+                    <asp:Label ID="profilePictureLabel" runat="server" Text='<%# Eval("profilePicture") %>' />
+                    <br />
+                    smokingHabit:
+                    <asp:Label ID="smokingHabitLabel" runat="server" Text='<%# Eval("smokingHabit") %>' />
+                    <br />
+                    isActive:
+                    <asp:Label ID="isActiveLabel" runat="server" Text='<%# Eval("isActive") %>' />
+                    <br />
+                    status:
+                    <asp:Label ID="statusLabel" runat="server" Text='<%# Eval("status") %>' />
+                    <br />
+                    registerTime:
+                    <asp:Label ID="registerTimeLabel" runat="server" Text='<%# Eval("registerTime") %>' />
+                    <br />
+                    <br />
+                </ItemTemplate>
+                <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            </asp:DataList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbconnection %>" SelectCommand="SELECT * FROM [user].Info WHERE sex=@sex and campus=@campus and department=@department and hairType=@hairType and hairColor=@hairColor and eyeColor=@eyeColor">
+                <SelectParameters>
+                    <asp:SessionParameter Name="sex" SessionField="cinsiyet" />
+                    <asp:SessionParameter Name="campus" SessionField="kampus" />
+                    <asp:SessionParameter Name="department" SessionField="bolum" />
+                    <asp:SessionParameter Name="hairType" SessionField="sactipi" />
+                    <asp:SessionParameter Name="hairColor" SessionField="sacrengi" />
+                    <asp:SessionParameter Name="eyeColor" SessionField="gozrengi" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </p>
+
     </form>
+    <p>
+        &nbsp;</p>
 </body>
 </html>

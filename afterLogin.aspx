@@ -66,17 +66,16 @@
             </div>
 		</div>
 
- 
+  <br />
 		<div class="row package-option">
             <!---------------------------------- 222222'LiK KOLONUN BASLANGICI----------------->
 			<div class="col-sm-2">
-     
-          <h3>Detaylı Arama</h3><br />
+        <h3>Detaylı Arama</h3><br />
          Cinsiyet:
          <br />
          <asp:DropDownList ID="sex" runat="server">
-             <asp:ListItem>Kadın</asp:ListItem>
              <asp:ListItem>Erkek</asp:ListItem>
+             <asp:ListItem>Kadın</asp:ListItem>
          </asp:DropDownList>
          <br /><br />
          Kampus:<br />
@@ -88,8 +87,8 @@
          </asp:DropDownList><br /><br />
          Bolum:<br />
          <asp:DropDownList ID="bolum" runat="server">
-              <asp:ListItem>Muhendislik</asp:ListItem>
              <asp:ListItem>Mimarlik</asp:ListItem>
+              <asp:ListItem>Muhendislik</asp:ListItem>
              <asp:ListItem>Iktisat - Isletme</asp:ListItem>
          </asp:DropDownList><br /><br />
 
@@ -102,8 +101,8 @@
 
          Sac Rengi:<br />
          <asp:DropDownList ID="sacRengi" runat="server">
-              <asp:ListItem>Sari</asp:ListItem>
              <asp:ListItem>Siyah</asp:ListItem>
+              <asp:ListItem>Sari</asp:ListItem>
              <asp:ListItem>Kahve Rengi</asp:ListItem>
          </asp:DropDownList><br /><br />
 
@@ -122,12 +121,16 @@
              <asp:ListItem>180 cm - 200 cm</asp:ListItem>
          </asp:DropDownList><br />--%>
          
+         
     
                 
-              <%-- <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>--%>
+                <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>
+          
+
+
+                <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
 			</div>
-            <asp:Label ID="querySonuc" runat="server" Text=""></asp:Label>
-            <asp:Button ID="ara2" runat="server" Text="Button" OnClick="ara2_Click" />
+
             
             <!---------------------------------- 222222'LUK KOLONUN BITISI----------------->
 
@@ -173,6 +176,8 @@
 					<a href="images/aa.jpg" data-toggle="lightbox"><img src="images/aa.jpg" alt="Screenshot"></a>
 				</div>
 				
+                
+
 			
 			</div>
 		</div>
