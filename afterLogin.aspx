@@ -61,7 +61,7 @@
 	<div class="container">
 		<div class="text-center">
 			<h2 class="wow fadeInCenter">Profil Bilgilerim</h2>
-			<div class="title-line wow fadeInCenter">Hosgeldin session ID'si:<asp:Literal ID="sonuc" runat="server"></asp:Literal>
+			<div class="title-line wow fadeInCenter">Yeni mesaj: <asp:Literal ID="sonuc" runat="server"></asp:Literal>
 			<div class="title-line wow fadeInCenter">Yeni bildirim:<asp:HyperLink ID="sonuc2" runat="server" NavigateUrl="~/bildirimler.aspx"></asp:HyperLink>
             </div>
 		</div>

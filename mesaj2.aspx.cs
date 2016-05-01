@@ -8,7 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-public partial class mesaj : System.Web.UI.Page
+public partial class mesaj2 : System.Web.UI.Page
 {
     
 

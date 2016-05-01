@@ -11,7 +11,13 @@ public partial class bildirimler : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["isim"] == null || Session["isim"] == "")
+            Response.Redirect("giris.aspx");
+        else
+        {
+            sonuc.Text = Session["isim"].ToString();
+            sonuc.Visible = false;
+        }
     }
 
 

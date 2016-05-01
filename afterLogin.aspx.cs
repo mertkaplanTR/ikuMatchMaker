@@ -18,7 +18,7 @@ public partial class afterLogin : System.Web.UI.Page
         else
         { 
             sonuc.Text = Session["isim"].ToString();
-            
+            sonuc.Visible = false;
         }
 
 

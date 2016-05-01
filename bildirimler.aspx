@@ -29,7 +29,7 @@
 <div id="menu">
 	<nav class="navbar-wrapper navbar-default" role="navigation">
 		<div class="container">
-			 
+            <asp:Label ID="sonuc" runat="server" Text=""></asp:Label>
 	 
 			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
 				<ul class="nav navbar-nav">

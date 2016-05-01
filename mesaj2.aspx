@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="mesajyaz.aspx.cs" Inherits="mesaj" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="mesaj2.aspx.cs" Inherits="mesaj2" EnableEventValidation="false" %>
 
 
 <!DOCTYPE html>
