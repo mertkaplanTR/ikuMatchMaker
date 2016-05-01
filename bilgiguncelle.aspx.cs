@@ -1,70 +1,25 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Configuration;
-//using System.Data;
-//using System.Data.SqlClient;
-//using System.Linq;
-//using System.Web;
-//using System.Web.UI;
-//using System.Web.UI.WebControls;
-
-//public partial class bilgiguncelle : System.Web.UI.Page
-//{
-//    protected void Page_Load(object sender, EventArgs e)
-//    {
-//        if (IsPostBack)
-//            return;
-//        //sayfa açılırken kullanıcı login olmuşmu olmamışmı kontrol ediyoruz, 
-//        // login ise giriş yap sayfasını açamasın
-//        if (Session["UserModel"] != null)
-//            Response.Redirect("afterLogin.aspx");
-//    }
-
-//    protected void kaydolButon_Click(object sender, EventArgs e)
-//    {
-//        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
-//        DataTable dtUser = new DataTable();
-//        con.Open();
-//        string name = firstName.Text;
-//        string surname = surName.Text;
-//        string email = mailAdresi.Text;
-//        string password = sifresi.Text;
-//        SqlCommand cmd = new SqlCommand("Insert Into [user].[Info] (name,surname,[mailAddress],[password]) Values (@name,@surname,@mailAddress,@password)", con);
-//        cmd.Parameters.Add(new SqlParameter("@name", name));
-//        cmd.Parameters.Add(new SqlParameter("@surname", surname));
-//        cmd.Parameters.Add(new SqlParameter("@mailAddress", email));
-//        cmd.Parameters.Add(new SqlParameter("@password", password));
-//        int result = cmd.ExecuteNonQuery();
-//        if (result > 0)
-//        {
-//            lblResult.ForeColor = System.Drawing.Color.Green;
-//            lblResult.Text = "Sing Up Complete";
-//        }
-//        else
-//        {
-//            lblResult.ForeColor = System.Drawing.Color.Green;
-//            lblResult.Text = "Sing Up Failed. You should fill all context!";
-//        }
-
-//    }
-//}
-
+﻿using System.Web.Security;
+using System.Web.UI;
+using System.IO;
+using System.Configuration;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
+using System.Data.SqlClient;
+using System.Data;
+using System.Collections.Generic;
 using System.Web.UI.WebControls;
 
 public partial class bilgiguncelle : System.Web.UI.Page
 {
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+
     DataAccess _dataAccess;
-    //public int UserID = 2;
     public int UserID;
-    
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
         _dataAccess = new DataAccess();
         if (Session["isim"] == null || Session["isim"] == "")
             Response.Redirect("giris.aspx");
@@ -77,10 +32,34 @@ public partial class bilgiguncelle : System.Web.UI.Page
         if (!Page.IsPostBack)
         {
             fillData();
+            fillPhotos();
+        }
+        
+    }
+    public void fillPhotos()
+    {
+
+        IList<HttpPostedFile> Images = fuImages.PostedFiles;
+        for (int i = 0; i < Images.Count; i++)
+        {
+            fuImages.PostedFiles[i].SaveAs(Server.MapPath("~/resim/") + fuImages.PostedFiles[i].FileName);
+        }
+
+
+        for (int i = 0; i < Images.Count; i++)
+        {
+            string path = Images[i].FileName;
+
+            SqlCommand cmd = new SqlCommand("select [pictureID],[path] from [system].[Picture] as SP join [user].[Info] as UI on SP.userID=UI.userID where SP.userID = @userID", con);
+            //SqlCommand cmd = new SqlCommand("insert into [system].[Picture] ([path],[userID]) values ('~/resim/'+@userID+'/' + @path,@userID)", con); userID klasörü oluşturup altına resimleri at !
+            cmd.Parameters.AddWithValue("@path", path);
+            cmd.Parameters.AddWithValue("@userID", UserID);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
 
     }
-    
     public void fillData()
     {
         //_dataAccess.getUsersInfoByID(UserID);
@@ -100,6 +79,54 @@ public partial class bilgiguncelle : System.Web.UI.Page
         txtHairColor.Text = _dataAccess.userSpec.HairColor;
         txtWeight.Text = _dataAccess.userSpec.weight.ToString();
         txtPlace.Text = _dataAccess.userSpec.Place;
+
+    }
+
+    protected void btnUpload_Click(object sender, EventArgs e)
+    {
+
+        IList<HttpPostedFile> Images = fuImages.PostedFiles;
+        for (int i = 0; i < Images.Count; i++)
+        {
+            fuImages.PostedFiles[i].SaveAs(Server.MapPath("~/resim/") + fuImages.PostedFiles[i].FileName);
+        }
+
+        
+        for (int i = 0; i < Images.Count; i++)
+        {
+            string path = Images[i].FileName;
+
+            SqlCommand cmd = new SqlCommand("insert into [system].[Picture] ([path],[userID]) values ('~/resim/'+@path,@userID)", con);
+            //SqlCommand cmd = new SqlCommand("insert into [system].[Picture] ([path],[userID]) values ('~/resim/'+@userID+'/' + @path,@userID)", con); userID klasörü oluşturup altına resimleri at !
+            cmd.Parameters.AddWithValue("@path", path);
+            cmd.Parameters.AddWithValue("@userID", UserID);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //uzantı kontrolü
+        //if (fuImages.HasFile)
+        //{
+        //    string extension = Path.GetExtension(fuImages.FileName);
+        //    if (extension.ToLower() == ".jpg" || extension.ToLower() == ".png" || extension.ToLower() == ".bmp")
+        //    {
+        //        SqlCommand cmd = new SqlCommand("select[path] from[system].Picture where[userID] = @userID", con);
+        //        cmd.Parameters.AddWithValue("@userID", UserID);
+        //        con.Open();
+        //        cmd.ExecuteNonQuery();
+        //        SqlDataReader rdr = cmd.ExecuteReader();
+        //        gvPhotos.DataSource = rdr;
+        //        gvPhotos.DataBind();
+        //        con.Close();
+
+
+        //    }
+
+
+        //}
+
+
 
     }
 
@@ -152,7 +179,7 @@ public partial class bilgiguncelle : System.Web.UI.Page
                         _dataAccess.updateUserInfo(UserID, MailAddress, Password, Phone, Facebook, Twitter, Instagram, Snapchat, Campus, Department, ShortInfo, HairType, HairColor, Weight, Place, SmokingHabit);
                         lblResult.Text = "Bilgiler başarıyla güncellendi !";
                     }
-                    
+
                     else
                     {
                         lblWeight.Visible = true;
@@ -165,25 +192,14 @@ public partial class bilgiguncelle : System.Web.UI.Page
                 }
 
             }
-
-
         }
         else
         {
             lblPasswordLength.Visible = false;
             lblConfirmPassword.Visible = true;
         }
-
-
     }
+    protected void ddlDepartment_SelectedIndexChanged(object sender, EventArgs e)    {    }
 
-    protected void ddlDepartment_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void ddlCampus_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
+    protected void ddlCampus_SelectedIndexChanged(object sender, EventArgs e)    {    }
 }

@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="bilgiguncelle.aspx.cs" Inherits="bilgiguncelle" %>
 
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -175,9 +177,33 @@
 
                         
 
-<%--                         <div class="dropdown">
-                        <asp:DropDownList ID="DropDownList1" runat="server" class="btn btn-primary dropdown-toggle"></asp:DropDownList></div>
-                        --%>
+                        <br />
+
+                        
+
+                        <asp:Label ID="Label14" runat="server" Text="Resim Yükle"></asp:Label>
+                        <br />
+                        <asp:FileUpload ID="fuImages" runat="server" AllowMultiple="true" />
+                        
+                        <asp:Button ID="btnUpload" runat="server" Text="Yükle" OnClick="btnUpload_Click"/>
+                        <br />
+                        <br />
+                        <asp:GridView ID="gvPhotos" runat="server" AutoGenerateColumns="False" DataKeyNames="pictureID" DataSourceID="SqlDataSource1" Width="2500" Height="100">
+                            <Columns>
+                                <asp:BoundField DataField="pictureID" HeaderText="pictureID" InsertVisible="False" ReadOnly="True" SortExpression="pictureID" />
+                                <asp:BoundField DataField="path" HeaderText="path" SortExpression="path" />
+                                <asp:ImageField DataImageUrlField="path" HeaderText="Resim">
+                                </asp:ImageField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbconnection %>" SelectCommand="SELECT [pictureID], [path] FROM [system].[Picture] WHERE ([userID] = @userID)">
+                            <SelectParameters>
+                                <asp:SessionParameter Name="userID" SessionField="isim" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                        <br />
+                        <br />
+                        <br />
                         <asp:Label ID="lblSmokingHabit" runat="server" Font-Size="18px" ForeColor="White" Text="Sigara Alışkanlığı" style="font-size: 18px"></asp:Label>
                         <div class="dropdown">
                         <asp:DropDownList ID="ddlSmokingHabit" runat="server"  class="btn btn-primary dropdown-toggle">
@@ -185,6 +211,9 @@
                         <asp:ListItem Value="Hayır">Hayır</asp:ListItem>
                         <asp:ListItem Value="Sosyal İçiçi">Sosyal İçiçi</asp:ListItem>
                     </asp:DropDownList></div>
+                        <br />
+                        <br />
+                        <br />
                         <br />
                             
 

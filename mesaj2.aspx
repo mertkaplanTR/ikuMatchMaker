@@ -49,10 +49,10 @@
 	<div class="contact fullscreen parallax" style="background-image:url('images/bg2.jpg');" data-img-width="2000" data-img-height="1334" data-diff="100">
 		<div class="overlay">
 			<div class="container">
-				<div class="row contact-row">
-                    
-                    <asp:Label ID="sonuc" runat="server" Text=""></asp:Label>
-                    <h1>Eşleştiğim Kişiler</h1>
+				<div class="row contact-row">   
+                    <div class="col-sm-10 contact-left wow fadeInUp">  
+                    <asp:Label ID="sonuc" runat="server" Text="" ></asp:Label>
+                    <h1>Mesajını Okuduğun Kişi:</h1>
 					<!-- /.address and contact -->
 					<asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource2" ForeColor="Black" GridLines="Vertical">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
@@ -74,7 +74,7 @@
                             <asp:ControlParameter ControlID="gonderilecekID" Name="admin2" PropertyName="Text" />
                         </SelectParameters>
                     </asp:SqlDataSource>
-					<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+					<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <Columns>
                             <asp:BoundField DataField="mesaj" HeaderText="mesaj" SortExpression="mesaj" />
@@ -88,7 +88,7 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
-					<div class="col-sm-5 contact-left wow fadeInUp">
+					
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbconnection %>" SelectCommand="select mesaj from [dbo].[mesajlar] where kimden=@admin and kime=@admin2">
                             <SelectParameters>
                                 <asp:SessionParameter Name="admin" SessionField="isim" />
@@ -96,8 +96,8 @@
                             </SelectParameters>
                         </asp:SqlDataSource>
 					</div>
-					<!-- /.contact form -->
-					<div class="col-sm-7 contact-right">
+					<!-- /.contact form ---------------------------------------------------------------------------------->
+					<div class="col-sm-2 contact-right">
 							<div class="form-group">
                                 <asp:TextBox ID="gonderilecekID" runat="server" class="form-control wow fadeInUp" placeholder="Gonderilecek Kisinin ID'si"></asp:TextBox>
 							</div>
