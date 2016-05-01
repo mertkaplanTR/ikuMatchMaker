@@ -241,14 +241,10 @@
                 </ItemTemplate>
                 <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
             </asp:DataList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbconnection %>" SelectCommand="SELECT * FROM [user].Info WHERE sex=@sex and campus=@campus and department=@department and hairType=@hairType and hairColor=@hairColor and eyeColor=@eyeColor">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbconnection %>" SelectCommand="SELECT * FROM [user].Info WHERE department=@department and sex=@sex">
                 <SelectParameters>
-                    <asp:SessionParameter Name="sex" SessionField="cinsiyet" />
-                    <asp:SessionParameter Name="campus" SessionField="kampus" />
                     <asp:SessionParameter Name="department" SessionField="bolum" />
-                    <asp:SessionParameter Name="hairType" SessionField="sactipi" />
-                    <asp:SessionParameter Name="hairColor" SessionField="sacrengi" />
-                    <asp:SessionParameter Name="eyeColor" SessionField="gozrengi" />
+                    <asp:SessionParameter Name="sex" SessionField="cinsiyet" />
                 </SelectParameters>
             </asp:SqlDataSource>
         </p>
