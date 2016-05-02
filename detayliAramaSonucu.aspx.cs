@@ -18,7 +18,8 @@ public partial class detayliAramaSonucu : System.Web.UI.Page
         else
         {
             sonuc.Text = Session["isim"].ToString();
-            Label1.Text = Session["bolum"].ToString();
+
+            
 
         }
     }
@@ -46,7 +47,6 @@ public partial class detayliAramaSonucu : System.Web.UI.Page
         email.Text = getEmail.ExecuteScalar().ToString();
         con.Close();
     }
-
 
 
     protected void detayliAraButonu_Click(object sender, EventArgs e)
@@ -87,4 +87,5 @@ public partial class detayliAramaSonucu : System.Web.UI.Page
         con.Close();
 
     }
+
 }

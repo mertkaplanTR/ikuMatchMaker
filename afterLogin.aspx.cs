@@ -34,16 +34,7 @@ public partial class afterLogin : System.Web.UI.Page
     
     }
 
-    void getSessions()
-    {
-        Session["cinsiyet"] = sex.Text;
-        Session["kampus"] = campus.Text;
-        Session["bolum"] = bolum.Text;
-        Session["sactipi"] = sacTipi.Text;
-        Session["sacrengi"] = sacRengi.Text;
-        Session["gozrengi"] = gozRengi.Text;
-    }
- 
+  
   
 
     void getNewNotification()
@@ -106,11 +97,5 @@ public partial class afterLogin : System.Web.UI.Page
     }
 
 
-    protected void detayliAraButonu_Click(object sender, EventArgs e)
-    {
-        getSessions();
-        Response.Redirect("detayliAramaSonucu.aspx");
-       // Label3.Text = Session["cinsiyet"].ToString();
-        //sessionu basarılı sekilde alıyor demek!
-    }
+    
 }

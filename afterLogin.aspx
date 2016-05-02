@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
      <title>AFTER LOGIN PAGE</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/owl.theme.css" rel="stylesheet" />
     <link href="css/owl.carousel.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
@@ -68,71 +69,89 @@
 
   <br />
 		<div class="row package-option">
-            <!---------------------------------- 222222'LiK KOLONUN BASLANGICI----------------->
 			<div class="col-sm-2">
-        <h3>Detaylı Arama</h3><br />
-         Cinsiyet:
-         <br />
-         <asp:DropDownList ID="sex" runat="server">
-             <asp:ListItem>Erkek</asp:ListItem>
-             <asp:ListItem>Kadın</asp:ListItem>
-         </asp:DropDownList>
-         <br /><br />
-         Kampus:<br />
-         <asp:DropDownList ID="campus" runat="server">
-             <asp:ListItem Value="0">Atakoy</asp:ListItem>
-             <asp:ListItem Value="1">Hukuk</asp:ListItem>
-             <asp:ListItem Value="2">Hazırlık</asp:ListItem>
-             <asp:ListItem Value="3">MYO</asp:ListItem>
-         </asp:DropDownList><br /><br />
-         Bolum:<br />
-         <asp:DropDownList ID="bolum" runat="server">
-             <asp:ListItem>Mimarlik</asp:ListItem>
-              <asp:ListItem>Muhendislik</asp:ListItem>
-             <asp:ListItem>Iktisat - Isletme</asp:ListItem>
-         </asp:DropDownList><br /><br />
+               <div class="nav-side-menu">
+    <div class="brand">
+        <img src="images/adsiz2.jpg" /></div>
+                   </br>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="#">
+                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                  </a>
+                </li>
 
-         Sac Tipi:<br />
-         <asp:DropDownList ID="sacTipi" runat="server">
-              <asp:ListItem>Duz</asp:ListItem>
-             <asp:ListItem>Dalgali</asp:ListItem>
-             <asp:ListItem>Kivircik</asp:ListItem>
-         </asp:DropDownList><br /><br />
+                <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li class="active"><a href="#">CSS3 Animation</a></li>
+                    <li><a href="#">General</a></li>
+                    <li><a href="#">Buttons</a></li>
+                    <li><a href="#">Tabs & Accordions</a></li>
+                    <li><a href="#">Typography</a></li>
+                    <li><a href="#">FontAwesome</a></li>
+                    <li><a href="#">Slider</a></li>
+                    <li><a href="#">Panels</a></li>
+                    <li><a href="#">Widgets</a></li>
+                    <li><a href="#">Bootstrap Model</a></li>
+                </ul>
 
-         Sac Rengi:<br />
-         <asp:DropDownList ID="sacRengi" runat="server">
-             <asp:ListItem>Siyah</asp:ListItem>
-              <asp:ListItem>Sari</asp:ListItem>
-             <asp:ListItem>Kahve Rengi</asp:ListItem>
-         </asp:DropDownList><br /><br />
 
-             Goz Rengi:<br />
-         <asp:DropDownList ID="gozRengi" runat="server">
-              <asp:ListItem>Kahve</asp:ListItem>
-             <asp:ListItem>Mavi</asp:ListItem>
-             <asp:ListItem>Yesil</asp:ListItem>
-             <asp:ListItem>Siyah</asp:ListItem>
-         </asp:DropDownList><br /><br />
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="service">
+                  <li>New Service 1</li>
+                  <li>New Service 2</li>
+                  <li>New Service 3</li>
+                </ul>
 
-<%--         Boyu:<br />
-         <asp:DropDownList ID="Boy" runat="server">
-              <asp:ListItem>140 cm - 160 cm</asp:ListItem>
-             <asp:ListItem>160 cm - 180 cm</asp:ListItem>
-             <asp:ListItem>180 cm - 200 cm</asp:ListItem>
-         </asp:DropDownList><br />--%>
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                  <li>New New 1</li>
+                  <li>New New 2</li>
+                  <li>New New 3</li>
+                </ul>
+
+
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-user fa-lg"></i> Profile
+                  </a>
+                  </li>
+
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-users fa-lg"></i> Users
+                  </a>
+                </li>
+            </ul>
+     </div>
+</div>
+       
+
+
          
          
     
                 
-                <asp:Button ID="detayliAraButonu" runat="server" Text="Ara" CssClass="btn btn-price" OnClick="detayliAraButonu_Click"/>
+                
           
 
 
-                <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
-			</div>
+               
+			
 
-            
-            <!---------------------------------- 222222'LUK KOLONUN BITISI----------------->
+           
+            </div> <!---------------------------------- 222222'LUK KOLONUN BITISI----------------->
 
 
 			<!---------------------------------- 1000000'LUK KOLONUN BASLANGICI----------------->
